@@ -1,34 +1,68 @@
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">-->
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.6">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+  <title>Document</title>
   <style media="screen">
-	*{margin:0;padding:0px;list-style:none;text-decoration:none;}
-    body{margin-top:10px;margin-left:10px; font-size:0.8em;}
-	.container{border:5px solid gray;background:lightblue;text-align:left;max-width:630px;padding:20px;margin:10px;}
-	.report{display:grid;	grid-template-columns: 1fr 7fr 4fr;	grid-gap:1px;	border:5px solid gray;}
-	li{background:#e0ebeb;}
-	.title{border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;}
-	.data{border-top:0px;}
-	.m_no{text-align:center;}
-	.subj,.artst{padding-left:10px;}
-	.title li:hover, .mus:hover, button:hover{color:red;cursor:pointer}
-	button{font-size:0.9em; text-align:center; font-weight:bold;margin:10px;margin-top:0px;padding:5px;}
+    * {box-sizing:border-box;margin:0px;padding:0px;list-style:none;}
+    body,html{-webkit-text-size-adjust:none;background:url("http://cfile284.uf.daum.net/original/99DD35415E547C4839E5D4") 100% center no-repeat fixed;color:black;width:100%;height:100%;}
+    button{border:1px solid gray;border-radius:5px;padding:2px; color:black; margin: 5px; font-size:16px; font-weight:bold; background-color:skyblue;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3), 0 6px 20px 0 rgba(0,0,0,0.3);}
+    button:hover{color:red;background-color:lightgray;cursor:pointer;}
+    #header{min-height:10%;padding-top:50px;}
+    #header h1{text-align:center;}
+    #header span{margin-left:50px;}
+    #content,#canvas{display:flex;flex-wrap:wrap;justify-content:center;}
+    #canvas{max-width:960px;}
+    #footer{text-align:center;min-height:15%;margin-top:50px;}
 
-	#lyr{border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;
-		border-spacing:11px;padding:1px;background:#ffe6ff;width:100%;height:auto;text-align:center;font-family:"굴림";font-weight:bold;}
-	.wd, p{color:blue;padding-left:40px;text-align:left;line-height:160%;height:auto;overflow-y: auto;}
-	h3{text-align:center;color:darkblue;}
-	#canv{max-width:630px;padding:0px;margin:10px;text-align:left;}
+    #dumm{height=0;}
+    h1{text-shadow: 4px 4px 4px gray;}
+  	.imga,.imgb{max-width:180px;max-height:180px;cursor:pointer;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);}
+    .thumb1{width:180px;float:left;text-align:center;margin:5px;margin-top:20px;}
+    .thumb2{width:150px;text-align:center;margin:5px;margin-top:20px;}
 
-</style>
+    #menubar{position:absolute;top:1px;display:flex;background:#0033cc;left:0px;width:100%;height:40px;color:white;}
+    #menubar>span>img{height:35px;padding-top:5px;}
+    #menubar>ul{display:flex;justify-content:center;width:99%;padding-bottom:0px;}
+    #menubar:after {content:'';display:block;clear:both;height=0;visibility:hidden;}
+    #menubar>ul li{list-style:none;overflow:hidden;height:35px;line-height:36px;padding:0px;margin-left:1px;font-weight:bold;width:auto;text-align:center;font-size:14px;}
+    #menubar>ul li:link{height:40px;overflow:hidden;color:white;text-decoration:none;text-align:center;}
+    #menubar>ul li:visited{color:#9966ff;}
+    #menubar>ul li:hover{color:#ee9999;cursor:pointer;}
+    #menubar>ul li:active{color:red;}
 
-<script type="text/javascript">
-var ytbm = new Array;
-fread("ytbm");
+    #image1,#image2,#image3,#image4,#image5,#image6{height:100%;width:auto;}
+    .slid1{position:absolute;text-align:center;animation:myslide 24s -20s ease infinite;}
+    .slid2{position:absolute;text-align:center;animation:myslide 24s -16s ease infinite;}
+    .slid3{position:absolute;text-align:center;animation:myslide 24s -12s ease infinite;}
+    .slid4{position:absolute;text-align:center;animation:myslide 24s -8s ease infinite;}
+    .slid5{position:absolute;text-align:center;animation:myslide 24s -4s ease infinite;}
+    .slid6{position:absolute;text-align:center;animation:myslide 24s ease infinite;}
+
+    @keyframes myslide {
+      0% {width:6px;height:6px;opacity:0.0;transform:translate(510px,64px);}
+      16% {width:58px;height:38px;opacity:0.3;transform:translate(853px,64px);}
+      33% {width:134px;height:90px;opacity:0.8;transform:translate(872px,150px);}
+      50% {width:656px;height:437px;opacity:1.0;transform:translate(185px,40px);}
+      67% {width:134px;height:90px;opacity:0.8;transform:translate(20px,150px);}
+      84% {width:58px;height:38px;opacity:0.3;transform:translate(115px,64px);}
+      100% {width:6px;height:6px;opacity:0.0;transform:translate(510px,64px);}
+  	}
+
+    #big {position:fixed;z-index:13;width:auto;max-width:100%;max-height:98%;left:10px;top:10px;}
+    .imgc {max-width:150px;max-height:150px;cursor:pointer;}
+    .imgc:hover {opacity:0.7;transform:translatey(-5px) rotate(5deg);}
+    .mask1,.mask2{position:fixed;z-index:13;background:black;display:none;left:0px;top:0px;width:100%;height:100%;}
+
+  </style>
+
+  <script type="text/javascript">
+
+fread("city");
+fread("imges");
 	
 function fread(fn){
     $(function (){
@@ -36,6 +70,7 @@ function fread(fn){
 
 	$.ajax({
 		url:fileName,
+	    headers: {  'Access-Control-Allow-Origin': './' },
 		dataType:'text',
 		success: function(da) {
 			var textLine = '<script type="text/javascript">var ' + fn + '=[';
@@ -56,80 +91,254 @@ function fread(fn){
 	});
     });
 };
-   //--■■■■■■■■■■■■■■■■■음악 __Xplayer.js■■■■■■■■■■■■■■■■■■
+ 
+  var htxt1 = ''; var htxt2 = '';
+  var ftxt1 = ''; var ftxt2 = '';
+  var seq = ''; var sez = ''; var slz = ''; var num = 0;
 
-var selm = ""; var seln = "";
-var rank = null; var title = ""; var duet = null;
-var dur = null; var t = null; var num=null;
+  function hdtitl() {
+    $('#header').empty();
+    $('#header').append(htxt1);
+    $('#header').append(htxt2);
+  };
 
+  function footxt() {
+    $('#footer').empty();
+    $('#footer').append(ftxt1);
+    $('#footer').append(ftxt2);
+  };
 
-//================ 음악 List 자동재생================
-  	$( function() {
-		$( 'button#submita' ).click(
-		async function () {
-			$('.rk').remove();
-			$(".container").hide();
-			for (i=0; i<ytbm.length; i++){	
-				rank = ytbm[i][0];			
-				title = ytbm[i][3] + ' - ' + ytbm[i][4];
-				num = i;
-				$('#canv').empty();
-				disp(num);
-				duet = ytbm[i][2];
-				await foo(num,duet);
-//				await viewerr();
-			}
-		});
-	});
+  //*=========== Main (tour)화면 영역 tourlist ============
+  function tourlist() {
+    $(function() {
 
-	function foo(e, t){
-		return new Promise(function(resolve, reject){
-			setTimeout( function(){
-				stopVideo();
-				resolve("async는 Promise방식을 사용합니다.");
-			}, t);
-		});
-	}
+      htxt1 = '<h1 class="hd">해외여행 &nbsp; 풍경사진 &nbsp; 모음</h1>';
+      htxt2 = '<span><button onclick="window.close();">창닫기</button></span>';
+      hdtitl();
 
-	function retn(){
-		$("#canv").empty();
-		$(".container").show();
-	};
+      var ttxt = new Array; var tsum = '';
+      var i = 0; var j = 0;
+      for (i = 0; i < tour.length; i++) {
+        j = j + 1;
+        ttxt.push('<div class="thumb1"><img class="imga" src="' + tour[i][3] + '" title="' + i + '" alt="' + tour[i][0] + '"><h4>' + tour[i][1] + '</h4><h5>' + tour[i][2] + '</h5></div>');
+      };
+      for (i = 0; i < ttxt.length; i++) {
+        tsum = tsum + ttxt[i]
+      };
+      $('#canvas').empty();
+      $('#canvas').append([tsum]);
+
+      $('#footer').empty();
+    });
+  };
+  tourlist();
+
+  //*<.imga>영역을 클릭하면 함수실행
+  $(document).on("click", ".imga", function() {
+    seq = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
+    for (i = 0; i < tour.length; i++) {
+      if (tour[i][0] == seq) { num1 = i }
+    }
+    citylist();
+  });
+
+  function rtncity(){
+    $(function() {
+	  stopVideo();
+	  $('#player').remove();
+      sez = "";
+      citylist();
+    });
+  };
+
+  //*=========== 여행도시 (city)화면 영역 citylist ============
+  function citylist() {
+    $(function() {
+        var ctxt = new Array;
+        var csum = "";
+
+        htxt1 = '<h1 class="hd">' + tour[num1][4] + '</h1>';
+        htxt2 = '<span><button onclick="tourlist();" title="Main"><img src="http://cfile285.uf.daum.net/original/99AF47455E55CD6E318F16" border=0 align=top></button></span>';
+        hdtitl();
+
+        for (var i = 0; i < city.length; i++) {
+          if (city[i][0].indexOf(seq) != -1) {
+            ctxt.push('<div class="thumb1"><img class="imgb" src="' + city[i][2] + '" title="' + city[i][1] + '" alt="' + city[i][0] + '"><h5>' + city[i][1] + '</h5></div>');
+          };
+        };
+        for (i = 0; i < ctxt.length; i++) {
+          csum = csum + ctxt[i]
+        };
+
+        $("#canvas").empty();
+        $('#canvas').append([csum]);
+
+        ftxt1 = '<h2>PHOTOS &nbsp;&nbsp;of &nbsp;&nbsp;' + tour[num1][5] + '</h2>';
+        ftxt2 = tour[num1][6];
+        footxt();
+      });
+  };
+
+  //*=========== 이미지 썸네일 (images)화면 메뉴바(citylist) ============
+  function mnubar() {
+    $(function() {
+
+      //*<.imgb>영역을 클릭하면 함수실행
+      $(document).on("click", ".imgb", function() {
+        var mtxt = new Array;
+        var msum = "";
+        var tmtxt = new Array;
+        var tmsum = "";
+        var smtxt = new Array;
+        var smsum = "";
+
+		sez = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
+        slz = sez;
+
+        mtxt.push('<div id="menubar"><span onclick="rtncity();"><img src="http://cfile285.uf.daum.net/original/99AF47455E55CD6E318F16"></span><div id="player"></div><ul>');
+
+        seq = sez.substring(0, 1);
+        for (i = 0; i < city.length; i++) {
+          if (city[i][0].substring(0, 1) == seq) {
+              mtxt.push('<li class="imgb" alt="' + city[i][0] + '">' + city[i][1] + '</li> &nbsp; ');
+          };
+        };
+        mtxt.push('</ul></div>');
+        for (i = 0; i < mtxt.length; i++) {msum = msum + mtxt[i]};
+        htxt1 = msum;
+        for (i = 0; i < city.length; i++) {
+          if (city[i][0] == sez) {
+			  htxt2 = '<div class="head"><br><h1 class="hd">' + city[i][1] + '</h1><span><button onclick="slidshw();">연속 슬라이드</button></span></div>';
+ 			  num2 = i;
+			  disp(num2);
+			  };
+        };
+        hdtitl();
+
+        //*============== 이미지 썸네일 (images)화면 영역  ===============
+        for (i = 0; i < imges.length; i++) {
+          if (imges[i][2] == sez) {
+            tmtxt.push('<div class="thumb2 imgc"><img class="imgc" src="' + imges[i][0] + '"/></div>');
+          };
+        };
+        //*================== BIG IMAGE 영역 ===========================
+        $(function() {
+          //*<.imgc>영역을 클릭하면 함수실행
+          $(".imgc").click(function() {
+            var bigImg = $(this).attr("src"); //*변수생성하여 클릭한 이미지주소를 대입
+            $(".mask1").show();
+            $("#big").attr({"src": bigImg}).show();
+          });
+
+          //*아이디값이 big_img인 요소를 클릭하면 빠르게 페이드아웃
+          $("#big").click(function() {
+            $(this).hide();
+            $(".mask1").hide();
+          });
+        });
+        //*------------------ BIG IMAGE 영역 end -----------------------
+        for (i = 0; i < tmtxt.length; i++) {
+          tmsum = tmsum + tmtxt[i]
+        };
+        $("#canvas").empty();
+        $('#canvas').append([tmsum]);
+
+        smtxt.push('<div id="mask1" class="mask1"><img src="" id="big"></div>');
+        smtxt.push('<div id="mask2" class="mask2"><div class="slid1"><img id="image1"></div><div class="slid2"><img id="image2"></div><div class="slid3"><img id="image3"></div><div class="slid4"><img id="image4"></div><div class="slid5"><img id="image5"></div><div class="slid6"><img id="image6"></div></div>');
+        for (i = 0; i < smtxt.length; i++) {
+          smsum = smsum + smtxt[i]
+        };
+        $("#dumm").empty();
+        $('#dumm').append([smsum]);
+      });
+    });
+  };
+  mnubar();
+  //*----------- 이미지 썸네일 (images)화면 메뉴바(citylist) end --------
+  //*============== 이미지 슬라이드 (slider)화면 영역  ===============
+  function slidshw() {
+      $(".mask2").show();
+      slider();
+
+      $(".mask2").click(function() {
+        $(".mask2").hide();
+      });
+  };
+
+  function slider() {
+    $(function() {
+
+      //변수를 선언합니다.
+      var count = 0;
+      var cnt = 0;
+      var image1 = document.getElementById('image1');
+      var image2 = document.getElementById('image2');
+      var image3 = document.getElementById('image3');
+      var image4 = document.getElementById('image4');
+      var image5 = document.getElementById('image5');
+      var image6 = document.getElementById('image6');
+
+      //========== 배열 영역 (frames) ======================
+      var frames = $.map(imges, function(element, index) {
+        if (element[2] === slz) {
+          return [element[0]]
+        }
+      });
+
+      // 맨앞에 붙여넣기.... 마지막==> 첫 이미지 넘어갈때 오류 방지용 임.
+      frames.unshift(' ');
+      //---------- 배열 영역 (frames) end ------------------
+
+      //====== 초기 슬라이드의 위치 지정 (랜덤으로)
+      var randomNumber = Math.round(Math.random() * frames.length);
+      if (randomNumber < 7) { randomNumber = 7 };
+
+      image1.src = frames[randomNumber - 6];
+      image2.src = frames[randomNumber - 5];
+      image3.src = frames[randomNumber - 4];
+      image4.src = frames[randomNumber - 3];
+      image5.src = frames[randomNumber - 2];
+      image6.src = frames[randomNumber - 1];
+
+      count = randomNumber - 1;
+
+      //===== 타이머 반복을 사용합니다.
+      setInterval(function() {
+        count = count + 1;
+        cnt = cnt + 1;
+        if (cnt == 1) {image1.src = frames[count];}
+        if (cnt == 2) {image2.src = frames[count];}
+        if (cnt == 3) {image3.src = frames[count];}
+        if (cnt == 4) {image4.src = frames[count];}
+        if (cnt == 5) {image5.src = frames[count];}
+        if (cnt == 6) {image6.src = frames[count];cnt = 0;}
+
+        if (count == frames.length - 1) {count = 0;}
+      }, 4000);
+    });
+  };
 
 //================ 음악 재생 player ==========
-	$(document).on("click", ".mus", 
-	async function(){
-		$(".container").hide();
-		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
-		num = Number(sen);
-		seln = ytbm[num][1];
-		rank = ytbm[num][0];			
-		title = ytbm[num][3] + ' - ' + ytbm[num][4];
-		$('#canv').empty();
-		await disp(num);
-//  		await viewerr();
-	});   
-
-//================ 음악 재생 player ==========
-
- function disp(num){
-	$(function () {
-		selm = ytbm[num][1];
 
 		// 영상의 정보를 담을 player 전역 변수 선언
-		var player = "";
+		var player = ""; var selm = ""; var seln = "";
 
     var tag = document.createElement("script");
     tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+ function disp(num){
+	$(function () {
+		selm = city[num][5];
+		seln = selm;
+
     // HTML 문서가 모두 준비되면
     $(function () {
         onYouTubeIframeAPIReady();
     });
 
-	 $('#canv').append('<div id="lyr"><button id="rtn" onClick="retn();">RETURN</button><br><div><div id="player"></div><hr/> <input type="button" value="재생" onClick="playVideo();"/> <input type="button" value="일시정지" onClick="pauseVideo();"/> <input type="button" value="종료" onClick="stopVideo();"/> <input type="button" id="volumeMute" value="음소거" onClick="volumeMute();"/> 볼륨 : <input type="range" value="50" min="0" max="100" onChange="soundControl(this.value);"/></div><img src="http://cfile202.uf.daum.net/original/11049F414EF7A9A7356A91"><img src="http://pds55.cafe.daum.net/attach/7/cafe/2008/01/06/08/30/47801330ad6f9&filename=a2.gif" height=35> <img src="http://cfs5.blog.daum.net/upload_control/download.blog?fhandle=MDQ5SktAZnM1LmJsb2cuZGF1bS5uZXQ6L0lNQUdFLzEvMTIwLmdpZi50aHVtYg==&amp;filename=120.gif"><img src="http://pds55.cafe.daum.net/attach/7/cafe/2008/01/06/08/30/47801330ad6f9&filename=a2.gif" height=35><img src="http://cfile202.uf.daum.net/original/11049F414EF7A9A7356A91"><br><br><br><h3>' + ytbm[num][3] + ' - ' + ytbm[num][4] + '</h3><br><br><div class="wd">' + ytbm[num][5] + '</div><br><img src="http://cfs2.planet.daum.net/upload_control/pcp_download.php?fhandle=NHZoUzBAZnMyLnBsYW5ldC5kYXVtLm5ldDovMTA3OTIyNDkvMi8yOTMuZ2lm&amp;filename=8.gif"><br><br></div><br><br>');
+	 $('#canv').append('<div id="player"></div>');
 
 	});
 };
@@ -137,8 +346,8 @@ var dur = null; var t = null; var num=null;
    // 영상의 세부정보를 player 변수에 담는다.
    function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-              height : '280'
-            , width : '500'
+              height : 1
+            , width : 1
             , videoId : selm
             , playerVars: {
                 'autoplay': 1                     // 자동재생
@@ -149,106 +358,51 @@ var dur = null; var t = null; var num=null;
                , 'disablekb' : 0                  // 키보드 컨트롤 사용 중지
             }
             , events: {
-                'onReady' : playVideo
+                'onReady' : onPlayerReady
 			   ,'onError' : onPlayerError
             }
         });
     };
 
     // 재생
-    function playVideo() {player.playVideo();	};
-    // 일시정지
-    function pauseVideo() {player.pauseVideo();};
+    function onPlayerReady(event) {event.target.playVideo();};
+    // Error
+    function onPlayerError(event){player.nextVideo();};
     // 종료
     function stopVideo() {player.stopVideo();};
-	// Error
-	function onPlayerError(event){
-		errlist.push('Error: ' + event.data + '\t' + rank + '\t' + title + '\t' + selm + '\r\n');
-		return false;
-	};
 
-    // 음소거 On / Off
-    function volumeMute() {
-        // 음소거
-        if(player.isMuted() == true) {player.unMute(); jQuery("#volumeMute").val("음소거");}
-        // 음소거 해제
-        else if(player.isMuted() == false) {player.mute(); jQuery("#volumeMute").val("음소거 해제");}
-    };
-    // 볼륨 조절
-    function soundControl(number) { player.setVolume(number); };
-
-//================ 음악 List 정렬================
-
-var orderBy = "asc";
-$(function (){
-  setTimeout(init, 700);
-});
-
-function init(){
-  tagParsing(ytbm, true);
-
-  //click Evt 정렬
-  $(".title").click(function(){
-    var titleName = this.id;
-    if(titleName == "m_no"){
-      objSort(ytbm, [0]);
-      tagParsing(ytbm, false);
-    }else if(titleName == "subj"){
-      objSort(ytbm, [3]);
-      tagParsing(ytbm, false);
-    }else if(titleName == "artst"){
-      objSort(ytbm, [4]);
-      tagParsing(ytbm, false);
-    }
-  })
-}
-
-function objSort(obj, sort){
-  if(orderBy == "asc"){ //오름차순 정렬
-    orderBy = "desc";
-    obj.sort(function(a, b){
-      if (a[sort] > b[sort]) return 1;
-      else if (a[sort] < b[sort]) return -1;
-    });
-  }else{ //내림차순 정렬
-    orderBy = "asc";
-    obj.sort(function(a, b){
-      if (a[sort] > b[sort]) return -1;
-      else if (a[sort] < b[sort]) return 1;
-    });
-  }
-}
-
-function tagParsing(obj, init){
-  var len = obj.length;
-  var tag = '';
-  for(i=0; i<obj.length; i++){
-    tag += "<li class='m_no mus' title='"+ i +"'>"+obj[i][0]+"</li>"
-    +"<li class='subj mus' title='"+ i +"'>"+obj[i][3]+"</li>"
-    +"<li class='artst'>"+obj[i][4]+"</li>";
-  }
-  document.getElementById("data").innerHTML = tag;
-};
-
-</script>
-
- </head>
- <body>
-
-<div class="container">
-		<button id="rtn" onClick="window.close();">RETURN</button><button id="submita"> 자동재생</button>
-
-	<div class="title report">
-		<li id="m_no" class="m_no title">번호</li>
-		<li id="subj" class="subj title">제목</li>
-		<li id="artst" class="artst title">가수</li>
-	</div>
-	<div id="data" class="data report">
-	</div>
+//***********************************************
+  </script>
+</head>
+<body>
+<div class="contents">
+  <div id="dumm"></div>
+  <div id="header"></div>
+  <div id="content">
+    <div id="canvas" class="col-8 "></div>
+  </div>
+  <div id="footer"></div>
 </div>
 
-  <div id="canv">
-  </div>
+<script type="text/javascript">
+var tour = [
+["A", "서유럽 5개국", "2000.10.25 ~ 11.03", "http://cfile210.uf.daum.net/image/1460C9194A1B2BFB10422E", "유럽 5개국 일주여행 풍경사진", "Five countries in the west of Europe", "( Italia, Austria, Swiss, France, England and Deutschland )"],
+["B", "장가계", "2005.06.21 ~ 06.25", "http://cfile224.uf.daum.net/image/1719D8104B15FD2A912FC9", "중국 호남성 장가계 풍경사진", "Zhangjiajie", "in the north-west of Hunan Province, China"],
+["C", "터키", "2005.09.25 ~ 10.03", "http://cfile232.uf.daum.net/image/1854BB1B4B16106243AFD7", "터키 일주여행 풍경사진", "Turkey", "in the west-end of Asia and the south-end of Europe"],
+["D", "우루무치", "2006.04.25 ~ 04.30", "http://cfile203.uf.daum.net/image/19762E134B1635F21819F0", "우루무치/돈황/투루판 여행 풍경사진", "Urumqi", "in the western China's Xinjiang Uyghur Autonomous Region"],
+["E", "알래스카", "2006.07.27 ~ 07.31", "http://cfile204.uf.daum.net/image/183358264B16F7EF1D88B0", "알래스카 여행 풍경사진", "Alaska", "The  50th State of USA, North-Western Region"],
+["F", "미동부캐나다", "2006.10.13 ~ 10.22", "http://cfile222.uf.daum.net/image/156CBD054B171AF28B7FF7", "미국 동부/캐나다 여행 풍경사진", "New York and Canada", "in the eastern North America"],
+["G", "황산", "2007.03.28 ~ 04.03", "http://cfile235.uf.daum.net/image/1754CC0D4B172A3D3648C0", "중국 안휘성 황산 여행 풍경사진", "Huangshan", "in the south of Anhui Province, China"],
+["H", "정주운대산", "2007.10.08 ~ 10.12", "http://cfile205.uf.daum.net/image/117495124B176A3E34B901", "중국 정주 여행 풍경사진", "Zhengzhou", "The capital city of Henan Province and located in the middle of China"],
+["I", "이집트", "2007.10.29 ~ 11.06", "http://cfile226.uf.daum.net/image/1148C51C4B17937E339C91", "이집트 일주 여행 풍경사진", "Egypt", "in the northern Africa"],
+["J", "미서부 3대캐년", "2009.05.04 ~ 05.12", "http://cfile215.uf.daum.net/image/164BF0274B1912901C1A80", "미서부/3대캐년 여행 풍경사진", "Western USA", "with the three Canyons"],
+["K", "베트남 하노이", "2010.05.30 ~ 06.03", "http://cfile236.uf.daum.net/image/121E89164C09C21F1D03DD", "베트남 하롱베이 여행 풍경사진", "Hanoi / Halong Bay", "in the Northern Viet Nam"],
+["L", "캄보디아 씨엠립", "2010.08.22 ~ 08.26", "http://cfile203.uf.daum.net/original/15643B144C848232289983", "캄보디아 씨엠립 여행 풍경사진", "Siem Reap", "in the Cambodia"],
+["M", "호주 시드니", "2014.05.22 ~ 05.27", "http://cfile213.uf.daum.net/image/25352D3F538A803A02107B", "호주 시드니 여행 풍경사진", "Sydney", "in the Australia"],
+["N", "장가계", "2016.04.02 ~ 04.06", "http://cfile246.uf.daum.net/image/277437485705CE051AC870", "중국 호남성 장가계 풍경사진", "Zhangjiajie", "in the north-west of Hunan Province, China"],
+["O", "발칸동유럽(크슬오체)", "2018.11.02 ~ 11.10", "http://cfile262.uf.daum.net/image/9919E23C5BF0F6051A3EBF", "발칸동유럽 4국(크,슬,오,체) 풍경사진", "Croatia, Slovenia, Austria, Tzech ", "in the Balkans and Eastern Europe"]
+];
 
- </body>
+</script>
+</body>
 </html>
