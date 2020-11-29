@@ -237,7 +237,8 @@ function fread(fn){
           //*아이디값이 big_img인 요소를 클릭하면 빠르게 페이드아웃
           $("#big").click(function() {
             $(this).hide();
-            $(".mask1").hide();
+            $(".mask1").empty();
+	    $(".mask1").hide();
           });
         });
         //*------------------ BIG IMAGE 영역 end -----------------------
