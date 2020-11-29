@@ -220,7 +220,7 @@ function fread(fn){
         //*============== 이미지 썸네일 (images)화면 영역  ===============
         for (i = 0; i < imges.length; i++) {
           if (imges[i][2] == sez) {
-            tmtxt.push('<div class="thumb2 imgc"><img class="imgc" src="' + imges[i][0] + '"/></div>');
+            tmtxt.push('<div class="thumb2 imgc"><img class="imgc" src="' + imges[i][0] + '" title="' + imges[i][1] + '"/></div>');
           };
         };
         //*================== BIG IMAGE 영역 ===========================
@@ -228,8 +228,10 @@ function fread(fn){
           //*<.imgc>영역을 클릭하면 함수실행
           $(".imgc").click(function() {
             var bigImg = $(this).attr("src"); //*변수생성하여 클릭한 이미지주소를 대입
+	    var titl = $(this).attr("title");
             $(".mask1").show();
             $("#big").attr({"src": bigImg}).show();
+            $("#big").attr({"title": titl}).show();
           });
 
           //*아이디값이 big_img인 요소를 클릭하면 빠르게 페이드아웃
