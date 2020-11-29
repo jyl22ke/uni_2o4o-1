@@ -228,7 +228,6 @@ function fread(fn){
           //*<.imgc>영역을 클릭하면 함수실행
           $(".imgc").click(function() {
             var bigImg = $(this).attr("src"); //*변수생성하여 클릭한 이미지주소를 대입
-            var titl = $(this).attr("title");
             $(".mask1").show();
             $("#big").attr({"src": bigImg}).show();
           });
@@ -246,7 +245,7 @@ function fread(fn){
         $("#canvas").empty();
         $('#canvas').append([tmsum]);
 
-        smtxt.push('<div id="mask1" class="mask1"><img src="" id="big"><br><br><p> ' + titl + ' </p></div>');
+        smtxt.push('<div id="mask1" class="mask1"><img src="" id="big"></div>');
         smtxt.push('<div id="mask2" class="mask2"><div class="slid1"><img id="image1"></div><div class="slid2"><img id="image2"></div><div class="slid3"><img id="image3"></div><div class="slid4"><img id="image4"></div><div class="slid5"><img id="image5"></div><div class="slid6"><img id="image6"></div></div>');
         for (i = 0; i < smtxt.length; i++) {
           smsum = smsum + smtxt[i]
