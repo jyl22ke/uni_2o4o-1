@@ -30,7 +30,7 @@
     #menubar>span>img{height:35px;padding-top:5px;}
     #menubar>ul{display:flex;justify-content:left;width:99%;padding-bottom:0px;}
     #menubar:after {content:'';display:block;clear:both;height=0;visibility:hidden;}
-    #menubar>ul li{list-style:none;overflow:hidden;height:35px;line-height:36px;padding:0px;margin-left:1px;font-weight:bold;width:auto;text-align:center;font-size:14px;border:1px solid gray;}
+    #menubar>ul li{list-style:none;overflow:hidden;height:30px;line-height:30px;padding:0px;margin-left:1px;font-weight:bold;width:auto;text-align:center;font-size:14px;border:1px solid gray;}
     #menubar>ul li:link{height:40px;overflow:hidden;color:white;text-decoration:none;text-align:center;}
     #menubar>ul li:visited{color:#9966ff;}
     #menubar>ul li:hover{color:#ee9999;cursor:pointer;}
@@ -197,7 +197,7 @@ function fread(fn){
 		sez = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
         slz = sez;
 
-        mtxt.push('<div id="menubar"><span onclick="rtncity();"><img src="http://cfile285.uf.daum.net/original/99AF47455E55CD6E318F16"></span><div id="player"></div><ul>');
+        mtxt.push('<div id="menubar"><span onclick="rtncity();"><img src="http://cfile285.uf.daum.net/original/99AF47455E55CD6E318F16"> </span><div id="player"></div><ul> ');
 
         seq = sez.substring(0, 1);
         for (i = 0; i < city.length; i++) {
