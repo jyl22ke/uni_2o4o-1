@@ -17,6 +17,7 @@
     #header h1{text-align:center;}
     #header span{margin-left:50px;}
     #canvas{max-width:960px;max-height:100%;padding-top:80px;color:#000;display:grid;grid-gap:15px;grid-template-columns: repeat(5, 180px);grid-auto-rows: 180px;align-content:center;justify-content:center;}
+    #canvasa{max-width:800px;max-height:100%;padding-top:80px;color:#000;display:grid;grid-gap:10px;grid-template-columns: repeat(5, 150px);align-content:center;justify-content:center;}
     #content{display:grid;grid-template-columns:1fr;max-height:100%;max-width:100%;justify-items:center;}
     #footer{text-align:center;min-height:15%;margin-top:50px;}
 
@@ -148,8 +149,11 @@ function fread(fn){
     $(function() {
 	  stopVideo();
 	  $('#player').remove();
-      sez = "";
-      citylist();
+          sez = "";
+	  $("#canvasa").empty();
+	  $("#canvasa").hide();
+	  $("#canvas").show();
+          citylist();
     });
   };
 
@@ -243,7 +247,10 @@ function fread(fn){
           tmsum = tmsum + tmtxt[i]
         };
         $("#canvas").empty();
-        $('#canvas').append([tmsum]);
+        $("#canvas").hide();
+        $("#canvasa").show();
+	$("#canvasa").empty();
+        $('#canvasa').append([tmsum]);
 
         smtxt.push('<div id="mask1" class="mask1"><img src="" id="big"></div>');
         smtxt.push('<div id="mask2" class="mask2"><div class="slid1"><img id="image1"></div><div class="slid2"><img id="image2"></div><div class="slid3"><img id="image3"></div><div class="slid4"><img id="image4"></div><div class="slid5"><img id="image5"></div><div class="slid6"><img id="image6"></div></div>');
