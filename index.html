@@ -235,6 +235,7 @@ function fread(fn){
             var desc = $(this).attr("title");
             $(".mask1").show();
             $("#big").attr({"src": bigImg}).show();
+	    $("#out").text(desc);
           });
 
           //*아이디값이 big_img인 요소를 클릭하면 빠르게 페이드아웃
@@ -253,7 +254,7 @@ function fread(fn){
 	$("#canvasa").empty();
         $('#canvasa').append([tmsum]);
 
-        smtxt.push('<div id="mask1" class="mask1"><div><img src="" id="big"></div><div><p>' + desc + '</p></div></div>');
+        smtxt.push('<div id="mask1" class="mask1"><div><img src="" id="big"></div><div id="out"></div></div>');
         smtxt.push('<div id="mask2" class="mask2"><div class="slid1"><img id="image1"></div><div class="slid2"><img id="image2"></div><div class="slid3"><img id="image3"></div><div class="slid4"><img id="image4"></div><div class="slid5"><img id="image5"></div><div class="slid6"><img id="image6"></div></div>');
         for (i = 0; i < smtxt.length; i++) {
           smsum = smsum + smtxt[i]
