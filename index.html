@@ -233,6 +233,7 @@ function fread(fn){
           $(".imgc").click(function() {
             var bigImg = $(this).attr("src"); //*변수생성하여 클릭한 이미지주소를 대입
             var desc = $(this).attr("title");
+            $("#canvasa").hide();
             $(".mask1").show();
             $("#big").attr({"src": bigImg}).show();
 	    $("#out").text(desc);
@@ -242,6 +243,7 @@ function fread(fn){
           $("#big").click(function() {
             $(this).hide();
  	    $(".mask1").hide();
+            $("#canvasa").show();
           });
         });
         //*------------------ BIG IMAGE 영역 end -----------------------
